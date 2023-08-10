@@ -1,9 +1,12 @@
-const express = require('express')
-const uuid = require('uuid')
-const port = 3000
+const express = require('express');
+const uuid = require('uuid');
+const cors = require('cors')
+
+const port = process.env.PORT || 3001
 
 const app = express()
 app.use(express.json()) //avisa que, por padrão, usaremos json (sempre tem que ser aqui em cima)
+app.use(cors()); //habilita para todo mundo
 
 const users = []
 
